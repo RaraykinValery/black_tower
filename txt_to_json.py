@@ -2,12 +2,34 @@ import json
 import re
 
 
-file: str = "/home/valery/Code/black_tower/content/adventure_paragraphs.txt"
+file: str = "./raw_book_files/adventure_paragraphs.txt"
 final_dict: dict = {"paragraphs": {}}
 number_line_re: re.Pattern = re.compile(r'^\d*$')
 
-with open(file) as f:
-    for line in f:
-        paragraph_number = number_line_re.match(line)
+f = open(file)
+lines = f.readlines()
+paragraph = {}
+paragraph_number = 0
 
-        if paragraph_number
+for i, line in enumerate(lines):
+    number_match = number_line_re.match(line)
+
+    if number_match:
+        paragraph = {
+            "text": "",
+            "enemies": [],
+            "luck test": 0,
+            "handicap": {},
+            "spells": [],
+            "next_paragraphs": [],
+            "state": 0
+        }
+        paragraph_number = number_match
+    else:
+        paragraph["text"] += line
+        if len(lines) - 1 == i or number_line_re.match(lines[i+1]):
+            final_dict["paragraphs"][paragraph_number.group(0)] = paragraph
+
+f.close()
+
+print(json.dumps(final_dict, sort_keys=True, indent=4, ensure_ascii=False))

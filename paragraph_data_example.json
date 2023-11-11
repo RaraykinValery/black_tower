@@ -1,0 +1,38 @@
+{
+	"text": "",
+	"enemies": [
+		{
+			"name": "Гигантский паук",
+			"skill": 8,
+			"stamina": 8
+		},
+		{
+			"name": "Гигантский паук",
+			"skill": 8,
+			"stamina": 8
+		}
+	],
+	"luck test": 0, // 0 - нет проверки на удачу, 1 - есть
+	"handicap": {
+		"skill": 0,
+		"stamina": 0,
+		"luck": 0
+	},
+	"spells": [
+		{
+			"power": {
+				"skill": 2
+			}
+		},
+		{
+			"weakness": {
+				"skill": 2
+			}
+		},
+		"copy"
+	],
+	"next_paragraphs": [],
+	"state": 0 // 0 - параграф, на котором выбираетсядействие
+			   // 1 - победа
+			   // 2 - поражение
+}
