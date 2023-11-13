@@ -18,11 +18,11 @@ for i, line in enumerate(lines):
         paragraph = {
             "text": "",
             "enemies": [],
-            "luck test": 0,
+            "luck test": {},
             "handicap": {},
             "spells": [],
             "next_paragraphs": [],
-            "state": 0
+            "state": "continue"
         }
         paragraph_number = number_match
     else:
@@ -32,4 +32,4 @@ for i, line in enumerate(lines):
 
 f.close()
 
-print(json.dumps(final_dict, sort_keys=True, indent=4, ensure_ascii=False))
+print(json.dumps(final_dict, indent=4, ensure_ascii=False))
