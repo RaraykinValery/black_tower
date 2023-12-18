@@ -18,7 +18,7 @@ for i, line in enumerate(lines):
         paragraph = {
             "text": "",
             "enemies": [],
-            "luck test": {},
+            "luck_test": {},
             "handicap": {},
             "spells": [],
             "next_paragraphs": [],
